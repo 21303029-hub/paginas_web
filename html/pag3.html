@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+
+            <tr><td>num1</td><td><input type="text" id="num1"></td></tr>
+            <tr><td>num2</td><td><input type="text" id="num2"></td></tr>
+
+            <tr><td> +</td><td><input type="radio" name="operacion" value="suma" ></td></tr>
+            <tr><td>-</td><td><input type="radio" name="operacion" value="resta" ></td></tr>
+             <tr><td> *</td><td><input type="radio" name="operacion" value="multi"></td></tr>
+              </table>
+
+               <button id="botonAlgo" onclick="calculando()">calcular</button>
+    <script>
+        function calculando(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            
+            let operacion=document.querySelector('input[name="operacion"]:checked')
+            
+            
+            if (operacion.value == 'suma'){
+                resultado = num1 + num2;
+            } else if (operacion.value == 'resta'){
+                resultado = num1 - num2;
+            } else if (operacion.value == 'multi'){
+                resultado = num1 * num2;
+            }
+            if ( num2 > num1) {
+             alert("no se puede realizar la operacion");
+        } else if ( num2 < num1 ) {
+          
+
+            alert("el resultado de:" + resultado );
+            
+    }
+        }
+    </script>
+</body>
+</html>        
